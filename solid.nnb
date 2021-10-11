@@ -1,0 +1,32 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "# SW Design Principles\r\nSoftware design principles\r\n\r\n## SOLID\r\n\r\nRobert C. Martin introduserte SOLID\r\n\r\nGode hint, tanker å ha med seg når man lager software. (Litt som veiskilt)\r\n\r\nVeien til :\r\n- kode som er robust\r\n- kode hvor man kan gjøre isolerte endringer\r\n- kode som er lett å gjenbruke\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## (SRP) Single Responsibility\r\n\r\nGenerellt prinsipp for software moduler, klasser, filer, grupper, enheter, repoer osv. (Common Closure)\r\n- Things that change for the same reason (group), things that different reasons (separate)\r\n- En grunn til å endre seg \r\n- Sofware enheten gjør en ting vs sofwareenheten er har ansvar til et begrenset område (actor)\r\n\r\n```bash\r\n-Dokumenter\r\n    - dokumentController.ts\r\n    - dokumentService.ts\r\n    - dokumentRepository.ts\r\n    - dokumentTyper.ts\r\n```\r\n\r\n **Funksjons eksempel:**"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "export function PatternGenerator(): void {\r\n\r\n    const generate441 = (): number => {\r\n        // some logic\r\n        /**\r\n         * more logic...\r\n         */\r\n        return 441;\r\n    };\r\n\r\n    const generate531 = (): number => {\r\n        // some logic\r\n        /**\r\n         * more logic...\r\n         */\r\n        return 531;\r\n    };\r\n\r\n    const generate55551 = (): number => {\r\n        // some logic\r\n        /**\r\n         * more logic...\r\n         */\r\n        return 55551;\r\n    }\r\n    //... more patterns\r\n\r\n    const simulateJuggling = (pattern: string): void => {\r\n        // render juggling simulator\r\n        /**\r\n         * loging for rendering juggling\r\n         */\r\n    };\r\n\r\n    const displayPattern = (pattern: number, index: number, fractionDigits: number, color: string): string => {\r\n       // display options\r\n        return pattern\r\n            .toExponential()\r\n            .charCodeAt(index)\r\n            .toFixed(fractionDigits)\r\n            .toString()\r\n            .fontcolor(color);\r\n    };\r\n\r\n    const logHandler = (message: string | number | null) => void {\r\n        // log handles logging\r\n        // logging logic etc\r\n    };\r\n};\r\n\r\nexport default PatternGenerator;"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## (OCP) Open/Closed\r\n\r\nVS Code -> Extensions (begrenser mye av endringene i VSCode)\r\n(extensions know about vscode, vscode does not know about extensions)\r\n\r\nYou should be able to extend the behavior of a system without having to modify that system.\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        }
+    ]
+}
